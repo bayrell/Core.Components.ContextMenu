@@ -31,19 +31,14 @@ use Core.Components.ContextMenu.ContextMenuItemClickEvent;
 class ContextMenuManager extends CoreManager
 {
 	
-	@Event{ "event": classof MouseClickEvent, "method_name": "onItemClick" };
-	public assignable UIController contextmenu_item = new UIController();
-	
-	
-	
 	/**
 	 * Event item click
 	 */
-	public void onItemClick(MouseClickEvent event)
+	public void onItemClick(UIEvent<MouseClickEvent> e)
 	{
 		/* Set new value */
-		string tag = event.ui.props.get("@tag");
-		this.signalOut( new ContextMenuItemClickEvent{ "tag": tag, "event": event } );
+		string tag = e.event.ui.props.get("@tag");
+		this.signalOut( new ContextMenuItemClickEvent{ "tag": tag, "event": e.event } );
 	}
 	
 }
