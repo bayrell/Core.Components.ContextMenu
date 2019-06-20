@@ -30,28 +30,13 @@ struct ContextMenuModel extends CoreStruct
 	
 	
 	/**
-	 * Hide context menu
-	 * @param ContextMenuModel model
-	 * @return ContextMenuModel
-	 */
-	lambda ContextMenuModel hideContextMenu(ContextMenuModel model)
-	{
-		if (model.is_active == false) return model;
-		return model.copy({
-			"is_active": false,
-		});
-	}
-	
-	
-	
-	/**
 	 * Show context menu
 	 * @param ContextMenuModel model
 	 * @param int x
 	 * @param int y
 	 * @return ContextMenuModel
 	 */
-	lambda ContextMenuModel showContextMenu(ContextMenuModel model, int x = 0, int y = 0, mixed tag = null)
+	lambda ContextMenuModel show(ContextMenuModel model, int x = 0, int y = 0, mixed tag = null)
 	{
 		if (model.is_active == true) return model;
 		return model.copy({
@@ -59,6 +44,21 @@ struct ContextMenuModel extends CoreStruct
 			"x": x,
 			"y": y,
 			"tag": tag,
+		});
+	}
+	
+	
+	
+	/**
+	 * Hide context menu
+	 * @param ContextMenuModel model
+	 * @return ContextMenuModel
+	 */
+	lambda ContextMenuModel hide(ContextMenuModel model)
+	{
+		if (model.is_active == false) return model;
+		return model.copy({
+			"is_active": false,
 		});
 	}
 	
