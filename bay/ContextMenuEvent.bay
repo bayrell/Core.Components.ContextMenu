@@ -22,7 +22,7 @@ use Runtime.CoreEvent;
 use Core.UI.Events.MouseEvent.MouseClickEvent;
 
 
-struct ContextMenuItemClickEvent extends CoreEvent
+struct ContextMenuEvent extends CoreEvent
 {
 	
 	public string tag = "";

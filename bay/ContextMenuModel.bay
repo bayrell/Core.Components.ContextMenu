@@ -59,6 +59,7 @@ struct ContextMenuModel extends CoreStruct
 		if (model.is_active == false) return model;
 		return model.copy({
 			"is_active": false,
+			"tag": null,
 		});
 	}
 	

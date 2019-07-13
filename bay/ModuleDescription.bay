@@ -18,16 +18,12 @@
 
 namespace Core.Components.ContextMenu;
 
-use Runtime.Exceptions.RuntimeException;
-use Runtime.Interfaces.ComponentInterface;
+use Runtime.Interfaces.AssetsInterface;
 use Runtime.Interfaces.ContextInterface;
 use Runtime.Interfaces.ModuleDescriptionInterface;
-use Core.UI.Render.RenderContainer;
 
 
-class ModuleDescription implements 
-	ModuleDescriptionInterface, 
-	ComponentInterface
+class ModuleDescription implements ModuleDescriptionInterface, AssetsInterface
 {
 
 	
@@ -64,11 +60,10 @@ class ModuleDescription implements
 	 */
 	lambda Collection<string> getModuleFiles() => 
 	[
-		"Core.Components.ContextMenu.ContextMenu",
-		"Core.Components.ContextMenu.ContextMenuItemClickEvent",
-		"Core.Components.ContextMenu.ContextMenuManager",
-		"Core.Components.ContextMenu.ContextMenuModel",
-		"Core.Components.ContextMenu.ModuleDescription",
+		"Core.Components.ContextMenu/ContextMenu",
+		"Core.Components.ContextMenu/ContextMenuEvent",
+		"Core.Components.ContextMenu/ContextMenuModel",
+		"Core.Components.ContextMenu/ModuleDescription",
 	];
 	
 	
@@ -77,27 +72,6 @@ class ModuleDescription implements
 	 * Returns enities
 	 */
 	lambda Collection<Dict> entities() => null;
-	
-	
-	
-	/**
-	 * Returns view name
-	 */
-	lambda string componentViewName()  => "Core.Components.ContextMenu.ContextMenu";
-	
-	
-	
-	/**
-	 * Returns manager name
-	 */
-	lambda string componentManagerName() => "Core.Components.ContextMenu.ContextMenuManager";
-	
-	
-	
-	/**
-	 * Returns model name
-	 */
-	lambda string componentModelName()  => "Core.Components.ContextMenu.ContextMenuModel";
 	
 	
 	

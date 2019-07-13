@@ -18,7 +18,7 @@
  
 namespace Core.Components.ContextMenu;
 
-use Core.UI.Render.CoreView;
+use Core.UI.CoreView;
 
 
 class ContextMenuItem extends CoreView
