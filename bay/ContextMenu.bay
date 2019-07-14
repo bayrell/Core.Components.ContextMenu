@@ -145,9 +145,8 @@ class ContextMenu extends Component
 	{
 		this.setModel
 		(
-			ContextMenuModel::show
+			this.model.show
 			(
-				this.model,
 				x,
 				y,
 				tag
@@ -164,10 +163,7 @@ class ContextMenu extends Component
 	{
 		this.setModel
 		(
-			ContextMenuModel::hide
-			(
-				this.model
-			)
+			this.model.hide()
 		);
 	}
 	

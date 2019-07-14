@@ -29,17 +29,17 @@ struct ContextMenuModel extends CoreStruct
 	public mixed tag = null;
 	
 	
+	
 	/**
 	 * Show context menu
-	 * @param ContextMenuModel model
 	 * @param int x
 	 * @param int y
 	 * @return ContextMenuModel
 	 */
-	lambda ContextMenuModel show(ContextMenuModel model, int x = 0, int y = 0, mixed tag = null)
+	public ContextMenuModel show(int x = 0, int y = 0, mixed tag = null)
 	{
-		if (model.is_active == true) return model;
-		return model.copy({
+		if (this.is_active == true) return this;
+		return this.copy({
 			"is_active": true,
 			"x": x,
 			"y": y,
@@ -51,13 +51,12 @@ struct ContextMenuModel extends CoreStruct
 	
 	/**
 	 * Hide context menu
-	 * @param ContextMenuModel model
 	 * @return ContextMenuModel
 	 */
-	lambda ContextMenuModel hide(ContextMenuModel model)
+	public ContextMenuModel hide()
 	{
-		if (model.is_active == false) return model;
-		return model.copy({
+		if (this.is_active == false) return this;
+		return this.copy({
 			"is_active": false,
 			"tag": null,
 		});
