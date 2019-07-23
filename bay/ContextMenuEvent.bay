@@ -26,6 +26,7 @@ struct ContextMenuEvent extends CoreEvent
 {
 	
 	public string tag = "";
+	public mixed item = null;
 	public MouseClickEvent event = null;
 	
 	
